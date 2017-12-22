@@ -1,0 +1,475 @@
+/*Imports*/
+
+//for generate bootstrap grid
+// @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+// @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+// @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid";
+
+//normalize
+@import "normalize";
+
+//fixed bootstrap grid for project
+@import "bootstrap_grid";
+
+//fonts from google fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+/*Variables*/
+$main-font: 'Roboto', 'Arial', 'Helvetica', sans-serif;;
+
+$font-color-1: #333333;
+$font-color-2: #ffffff;
+$font-color-3: #1CAF5E;
+$color-theme: #295fcc;
+
+$font-size: 14px;
+
+//transitions   
+$prop: all;
+$time: 0.5s;
+$funct: ease;
+
+
+/*Mixins*/
+@mixin transition($prop, $time, $funct) {
+	transition: $prop $time $funct;
+}
+
+
+/*General*/
+
+*, *:after, *:before {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+	margin: 0;
+	line-height: 1.15;
+}
+
+a, a:hover, a:focus {
+	text-decoration: none;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: $main-font;
+	color: $font-color-1;
+	font-size: $font-size;
+	font-weight: 400;
+	text-align: center;
+	line-height: 1.15;
+}
+
+.svg-wrap {
+	position: absolute; 
+	visibility: hidden;
+	height: 0; 
+	width: 0; 
+}
+
+/*Sidebar*/
+
+aside {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 240px;
+	height: 100vh;
+	background: #27B983;
+	background: linear-gradient(to bottom, #27B983 55%, #91E857 100%);
+}
+
+.aside__logo {
+	height: 70px;
+	background: rgba(255, 255, 255, 0.1);
+	img {
+		width: 124px;
+		height: 25px;
+		margin-top: 18px;
+	}
+}
+
+.profile {
+	margin: 40px auto 0 30px;
+	text-align: left;
+	&__avatar {
+		width: 45px;
+		height: 45px;
+		border: 2px solid #ffffff;
+		border-radius: 50%;
+		vertical-align: middle;
+	}
+	&__info {
+		display: inline-block;
+		margin-left: 10px;
+		vertical-align: middle;
+	}
+	&__name {
+		position: relative;
+		margin-bottom: 3px;
+		color: $font-color-2;
+		cursor: pointer;
+		@include transition($prop, $time, $funct);
+		&:before {
+			position: absolute;
+			top: 6px;
+			right: -5px;
+			color: #1CAF5E;
+			font-size: 0.857rem;
+			@include transition($prop, $time, $funct);
+		}
+		&:hover {
+			color: rgba(0, 0, 0, 0.3);
+			&:before {
+				color: #ffffff;
+			}
+		}
+	}
+	&__follovers {
+		font-weight: bold;
+		color: rgba(0, 0, 0, 0.3);
+	}
+}
+
+.aside__menu {
+	margin-top: 40px;
+	padding: 0 20px;
+	li {
+		position: relative;
+	}
+	svg {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 15px;
+		width: 20px;
+		height: 20px;
+	}
+	a {
+		display: block;
+		padding: 17px 0 17px 50px;
+		color: $font-color-2;
+		text-align: left;
+		border-radius: 5px;
+		@include transition($prop, $time, $funct);
+		&:hover, &:active, &:focus {
+			background: rgba(255, 255, 255, 0.15);
+		}
+	} 
+}
+
+footer {
+	position: absolute;
+	left: 35px;
+	bottom: 0;
+	width: 71%;
+	padding: 22px 0 30px;
+	border-top: 1px solid rgba(0, 0, 0, 0.07);
+	li {
+		display: inline-block;
+		margin: 0 8px 15px;
+	}
+	a {
+		text-decoration: none;
+		color: #147A42;
+		font-size: 0.857rem;
+		border-bottom: 1px solid transparent;
+		@include transition($prop, .3s, $funct);
+		&:hover, &:active, &:focus {
+			color: $font-color-2;
+			border-color: $font-color-2; 
+		}
+	}
+}
+
+
+/*Header*/
+header {
+	height: 70px;
+	background: #ffffff;
+	text-align: right;
+}
+
+.notification, 
+.search {
+	position: relative;
+	display: inline-block;
+	margin: 24px 30px 0 0;
+	cursor: pointer;
+	@include transition($prop, .3s, $funct);
+	&:hover {
+		transform: scale(1.2);
+	}
+
+	svg {
+		width: 28px;
+		height: 28px;
+	} 
+
+	span {
+		position: absolute;
+		top: -7px;
+		right: -8px;
+		width: 20px;
+		height: 20px;
+		background: #1DCE6C;
+		color: #ffffff;
+		font-size: 0.714rem;
+		font-weight: bold;
+		line-height: 2;
+		text-align: center;
+		border-radius: 50%;
+	}
+}
+
+/*Main content*/
+.content {
+	margin-left: 240px;
+	.container {
+		height: 200px;
+	}
+}
+
+.username {
+	margin-bottom: 25px;
+	padding-top: 7px;
+	color: $font-color-3;
+	font-size: 1.714rem;
+	text-align: left;
+}
+
+.dashboard-head {
+	position: relative;
+	text-align: left;
+	button:not(:last-of-type) {
+		position: relative;
+		display: inline-block;
+		border: none;
+		outline: none;
+		background: transparent;
+		margin-right: 30px;
+		padding: 0 0 8px 0;
+		font-size: 1.143rem;
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 0;
+			height: 4px;
+			background: #B8E986;
+			border-radius: 2px;
+			@include transition($prop, $time, $funct);
+		}
+		&:hover, &:focus, &:active {
+			&:after {
+				width: 100%;
+			}
+		}
+	}
+	.btn-add {
+		outline: none;
+		background: transparent;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 154px;
+		height: 40px;
+		padding: 0;
+		color: $font-color-3;
+		border: 1px solid $font-color-3;
+		border-radius: 4px;
+		@include transition($prop, $time, $funct);
+		&:hover, &:focus, &:active {
+			background: $font-color-3;
+			color: $font-color-2;
+			border-color: transparent;
+		}
+	}
+}
+
+/*Modal window*/
+.modal-window-wrap {
+	position: fixed;
+	top: 0;
+	z-index: -1;
+	overflow: hidden;
+	width: 100%;
+	min-height: 100vh;
+	background: rgba(0,0,0, 0.5);
+	z-index: -1;
+	opacity: 0;
+	@include transition($prop, $time, $funct);
+}
+
+.modal-window-cnt{
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+}
+
+.modal-window {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 600px;
+	min-height: 260px;
+	padding: 25px;
+	transform: translate(-75%,-70%);
+	background: #ffffff;
+	text-align: left;
+	opacity: 0;
+	border-radius: 4px;
+	@include transition($prop, $time, $funct);
+
+	h3 {
+		margin-bottom: 30px;
+		font-size: 1.286rem;
+		color: #4F4F4F;
+	}
+
+	p {
+		margin-bottom: 20px;
+		color: #4F4F4F;
+	}
+
+	label {
+		display: block;
+		margin-bottom: 8px;
+		font-size: 0.929rem;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	input {
+		display: block;
+		width: 100%;
+		margin-bottom: 20px;
+		padding: 10px 20px 10px 15px;
+		border-radius: 4px;
+		outline: 0;
+		border: 1px solid #C5CFC9;
+	}
+
+	.btn-lookup {
+		float: right;
+		width: 118px;
+		height: 40px;
+		background: #53CD72;
+		background: linear-gradient(to bottom, #53CD72 0%, #1CAF5E 100%);
+		color: $font-color-2;
+		border: 1px solid transparent;
+		outline: none;
+		border-radius: 4px;
+		@include transition($prop, $time, $funct);
+		&:hover {
+			background: #ffffff;
+			color: $font-color-3;
+			border-color: $font-color-3;
+		} 
+	}
+
+	.btn-modal-close {
+		position: absolute;
+		top: 23px;
+		right: 26px;
+		background: none;
+		border: none;
+		outline: none;
+		font-size: 1.1485rem;
+	}
+}
+
+/*Appends from js file*/
+.app {
+	margin-top: 25px;
+	text-align: left;
+	.col-lg-3 {
+		margin-bottom: 25px;
+	}
+	.card {
+		position: relative;
+		height: 200px;
+		margin-bottom: 10px;
+		background: no-repeat center center;
+		background-size: 100% 100%;
+		border-radius: 9px;
+
+		.icon {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			width: 20px;
+			height: 20px;
+		}
+		.total {
+			position: absolute;
+			top: 75px;
+			left: 20px;
+			font-size: 2.714rem;
+			font-weight: bold;
+			color: $font-color-2;
+		}
+		.descr {
+			position: absolute;
+			top: 125px;
+			left: 25px;
+			text-transform: uppercase;
+			color: $font-color-2;
+		}
+		.count {
+			position: absolute;
+			bottom: 10px;
+			right: 25px;
+			font-size: 1.857rem;
+			color: $font-color-2;
+		}
+		.arrow {
+			position: absolute;
+			bottom: 18px;
+			right: 10px;
+			width: 7px;
+			height: 12px;
+		}
+	}
+	
+	.photo	{
+		display: inline-block;
+		width: 35px;
+		height: 35px;
+		vertical-align: middle;
+	}
+	.info {
+		display: inline-block;
+		margin-left: 5px;
+		vertical-align: middle;
+		.social {
+			display: block;
+			font-size: 0.9286rem;
+			opacity: 0.5;
+			&:first-letter {
+				text-transform: uppercase;
+			}
+		}
+		.name {
+			display: inline-block;
+			color: #333333;
+			&:hover, &:focus, &:active {
+				text-decoration: underline;
+			}
+		}	
+	}
+}
