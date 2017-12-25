@@ -23,7 +23,7 @@ $('.btn-modal-close').on('click', function() {
 var socials = {
 	"facebook": {
 		"bg":"linear-gradient(to bottom left, #39579A 0%, #2C4479 100%)",
-		"icon":"dev/svg/Facebook-color.svg",
+		"icon":"svg/Facebook-color.svg",
 		"total": 1786,
 		"descr":"follovers",
 		"count": {
@@ -32,17 +32,17 @@ var socials = {
 			"month": -180
 		},	
 		"arrow": {
-			"arrow_1": "dev/svg/arrow_up.svg",
-			"arrow_2": "dev/svg/arrow_down.svg"
+			"arrow_1": "svg/arrow_up.svg",
+			"arrow_2": "svg/arrow_down.svg"
 		},		
-		"photo": "dev/images/avatar_2.png",
+		"photo": "images/avatar_2.png",
 		"name": "@abhisek.daas",
 		"color": "#ffffff"
 	},
 
 	"twitter": {
 		"bg":"linear-gradient(to bottom left, #059FF5 0%, #059FC3 100%)",
-		"icon":"dev/svg/Twitter-color.svg",
+		"icon":"svg/Twitter-color.svg",
 		"total": 1575,
 		"descr":"follovers",
 		"count": {
@@ -51,17 +51,17 @@ var socials = {
 			"month": -420
 		},	
 		"arrow": {
-			"arrow_1": "dev/svg/arrow_up.svg",
-			"arrow_2": "dev/svg/arrow_down.svg"
+			"arrow_1": "svg/arrow_up.svg",
+			"arrow_2": "svg/arrow_down.svg"
 		},		
-		"photo": "dev/images/avatar_5.png",
+		"photo": "images/avatar_5.png",
 		"name": "@wholetthedasout",
 		"color": "#ffffff"
 	},
 
 	"instagram": {
 		"bg":"linear-gradient(to top right, #e66221 0%, #7022b8 100%)",
-		"icon":"dev/svg/Instagram-color.svg",
+		"icon":"svg/Instagram-color.svg",
 		"total": 1125,
 		"descr":"follovers",
 		"count": {
@@ -70,17 +70,17 @@ var socials = {
 			"month": -345
 		},	
 		"arrow": {
-			"arrow_1": "dev/svg/arrow_up.svg",
-			"arrow_2": "dev/svg/arrow_down.svg"
+			"arrow_1": "svg/arrow_up.svg",
+			"arrow_2": "svg/arrow_down.svg"
 		},		
-		"photo": "dev/images/avatar_1.jpg",
+		"photo": "images/avatar_1.jpg",
 		"name": "@wholetthedasout",
 		"color": "#ffffff"
 	},
 
 	"linkedin": {
 		"bg":"linear-gradient(to bottom left, #007EBB 0%, #007E9D 100%)",
-		"icon":"dev/svg/LinkedIn-color.svg",
+		"icon":"svg/LinkedIn-color.svg",
 		"total": 1125,
 		"descr":"follovers",
 		"count": {
@@ -89,17 +89,17 @@ var socials = {
 			"month": -563
 		},	
 		"arrow": {
-			"arrow_1": "dev/svg/arrow_up.svg",
-			"arrow_2": "dev/svg/arrow_down.svg"
+			"arrow_1": "svg/arrow_up.svg",
+			"arrow_2": "svg/arrow_down.svg"
 		},		
-		"photo": "dev/images/avatar_1.jpg",
+		"photo": "images/avatar_1.jpg",
 		"name": "@abhisekd3",
 		"color": "#ffffff"
 	},
 
 	"youtube": {
 		"bg":"linear-gradient(to bottom left, #CE1312 0%, #B01312 100%)",
-		"icon":"dev/svg/Youtube-color.svg",
+		"icon":"svg/Youtube-color.svg",
 		"total": 1246,
 		"descr":"subscribers",
 		"count": {
@@ -108,40 +108,40 @@ var socials = {
 			"month": -547
 		},	
 		"arrow": {
-			"arrow_1": "dev/svg/arrow_up.svg",
-			"arrow_2": "dev/svg/arrow_down.svg"
+			"arrow_1": "svg/arrow_up.svg",
+			"arrow_2": "svg/arrow_down.svg"
 		},		
-		"photo": "dev/images/avatar_3.jpg",
+		"photo": "images/avatar_3.jpg",
 		"name": "@TheAbhisekD",
 		"color": "#ffffff"
 	},
 
 	"snapcat": {
 		"bg":"linear-gradient(to bottom left, #FFFE00 0%, #F3F200 100%)",
-		"icon":"dev/svg/Youtube-color.svg",
+		"icon":"svg/Youtube-color.svg",
 		"total": 1547,
 		"descr":"snap score",			
-		"photo": "dev/images/avatar_5.png",
+		"photo": "images/avatar_5.png",
 		"name": "@abhisekd",
 		"color": "#000000"
 	},
 
 	"google+": {
 		"bg":"linear-gradient(to bottom left, #F93F2D 0%, #C73F2D 100%)",
-		"icon":"dev/svg/GooglePlus-color.svg",
+		"icon":"svg/GooglePlus-color.svg",
 		"total": 1547,
 		"descr":"follovers",			
-		"photo": "dev/images/avatar_3.jpg",
+		"photo": "images/avatar_3.jpg",
 		"name": "@+AbhisekDas",
 		"color": "#ffffff"
 	},
 
 	"vine": {
 		"bg":"linear-gradient(to bottom left, #008E87 0%, #00B687 100%)",
-		"icon":"dev/svg/Vine-color.svg",
+		"icon":"svg/Vine-color.svg",
 		"total": 1547,
 		"descr":"loops",			
-		"photo": "dev/images/avatar_4.jpg",
+		"photo": "images/avatar_4.jpg",
 		"name": "@1316139228245221376",
 		"color": "#ffffff"
 	},
@@ -185,7 +185,7 @@ $('.btn-day').on('click', function() {
 
 		if (data.count ) {
 			var preIndex = (data.count.day > 0) ? '+' : '';
-			$('.' + key + ' .count').html(data.count.day);
+			$('.' + key + ' .count').html(preIndex + data.count.day);
 		};
 
 		if ( data.arrow ) {
@@ -200,7 +200,7 @@ $('.btn-week').on('click', function() {
 	$.each(socials, function( key, data ) {
 		if (data.count ) {
 			var preIndex = (data.count.week > 0) ? '+' : '';
-			$('.' + key + ' .count').html(data.count.week);
+			$('.' + key + ' .count').html(preIndex + data.count.week);
 		};
 
 		if ( data.arrow ) {
@@ -215,7 +215,7 @@ $('.btn-month').on('click', function() {
 	$.each(socials, function( key, data ) {
 		if (data.count ) {
 			var preIndex = (data.count.month > 0) ? '+' : '';
-			$('.' + key + ' .count').html(data.count.month);
+			$('.' + key + ' .count').html(preIndex + data.count.month);
 		};
 
 		if ( data.arrow ) {

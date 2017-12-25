@@ -185,7 +185,7 @@ $('.btn-day').on('click', function() {
 
 		if (data.count ) {
 			var preIndex = (data.count.day > 0) ? '+' : '';
-			$('.' + key + ' .count').html(data.count.day);
+			$('.' + key + ' .count').html(preIndex + data.count.day);
 		};
 
 		if ( data.arrow ) {
@@ -200,7 +200,7 @@ $('.btn-week').on('click', function() {
 	$.each(socials, function( key, data ) {
 		if (data.count ) {
 			var preIndex = (data.count.week > 0) ? '+' : '';
-			$('.' + key + ' .count').html(data.count.week);
+			$('.' + key + ' .count').html(preIndex + data.count.week);
 		};
 
 		if ( data.arrow ) {
@@ -215,7 +215,7 @@ $('.btn-month').on('click', function() {
 	$.each(socials, function( key, data ) {
 		if (data.count ) {
 			var preIndex = (data.count.month > 0) ? '+' : '';
-			$('.' + key + ' .count').html(data.count.month);
+			$('.' + key + ' .count').html(preIndex + data.count.month);
 		};
 
 		if ( data.arrow ) {
